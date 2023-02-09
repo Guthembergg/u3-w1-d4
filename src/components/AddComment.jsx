@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 class AddComment extends Component {
   state = {
@@ -11,10 +11,6 @@ class AddComment extends Component {
   };
 
   handleChange = (propertyName, propertyValue) => {
-    // propertyName sarà una dei nomi degli input: "name", "phone", "numberOfPeople", ecc..
-    // propertyValue sarà una tra e.target.value || e.target.checked
-
-    // stiamo controllando se siamo nell'input "numberOfPeope" per decidere se fare il parseInt del numero o meno
     const value =
       propertyName === "rate" ? parseInt(propertyValue) : propertyValue;
 
@@ -22,8 +18,6 @@ class AddComment extends Component {
       MyComment: {
         ...this.state.MyComment,
         [propertyName]: value,
-        // le parentesi quadre nel contesto di un'oggetto permettono la valutazione di un valore dinamico
-        // [propertyName] acquisirà come valore una delle stringhe che abbiamo passato come primo parametro
       },
     });
   };
@@ -72,7 +66,6 @@ class AddComment extends Component {
               onChange={(e) => {
                 console.log(e.target.value);
 
-                // this.setState({ reservation: { ...this.state.reservation, phone: e.target.value } });
                 this.handleChange("comment", e.target.value);
               }}
             />
@@ -84,12 +77,11 @@ class AddComment extends Component {
             <Form.Label>Rate</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Insert your comment"
+              placeholder="Insert your rate"
               value={this.state.MyComment.rate}
               onChange={(e) => {
                 console.log(e.target.value);
 
-                // this.setState({ reservation: { ...this.state.reservation, phone: e.target.value } });
                 this.handleChange("rate", e.target.value);
               }}
             />

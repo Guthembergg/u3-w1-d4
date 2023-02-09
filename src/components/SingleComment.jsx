@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 class SingleComment extends Component {
   state = {};
@@ -8,7 +8,18 @@ class SingleComment extends Component {
     return (
       <>
         <Row>
-          <Col> {this.props.comment} </Col> <Col> {this.props.rate} </Col>
+          <Col
+            className="text-center"
+            style={{ color: "red", fontWeight: 600 }}
+          >
+            {this.props.comment}
+          </Col>
+          <Col
+            className="text-center"
+            style={{ color: "blue", fontWeight: 600 }}
+          >
+            {this.props.rate}
+          </Col>
         </Row>
       </>
     );

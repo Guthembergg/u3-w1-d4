@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import AddComment from "./AddComment";
 import CommentList from "./CommentsList";
 
@@ -24,16 +23,12 @@ class CommentArea extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        // salvare nello state il nostro array data
         console.log(data);
         this.setState({
-          // reservations: [], // simuliamo un database vuoto
           comments: data,
           isLoading: false,
         });
-        // ogni volta che cambia lo stato, render() viene invocato di nuovo
       } else {
-        // alert('Errore nel caricamento dei contenuti.')
         this.setState({
           isLoading: false,
           hasError: true,
@@ -50,13 +45,8 @@ class CommentArea extends Component {
   };
 
   componentDidMount = () => {
-    // componentDidMount() avviene dopo la prima invocazione di render(), e avviene UNA VOLTA SOLA poco prima della fine del montaggio del componente
     console.log("SONO COMPONENT DID MOUNT!");
     this.fetchComment();
-
-    // il fatto che componentDidMount() venga eseguito una volta sola e una soltanto
-    // unito al fatto che viene eseguito in maniera NON-BLOCCANTE (dopo il render iniziale)
-    // lo rende PERFETTO per eseguire operazioni asincrone con fetch()
   };
 
   render() {

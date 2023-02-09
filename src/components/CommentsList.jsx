@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import SingleComment from "./SingleComment";
 
 class CommentList extends Component {
@@ -10,8 +10,12 @@ class CommentList extends Component {
       <>
         {this.props.comments && (
           <Row>
-            <Col>Comment</Col>
-            <Col>Value</Col>
+            <Col className="text-center" style={{ fontWeight: 700 }}>
+              Comment
+            </Col>
+            <Col className="text-center" style={{ fontWeight: 700 }}>
+              Value
+            </Col>
           </Row>
         )}
         {this.props.comments.map((el, i) => {
