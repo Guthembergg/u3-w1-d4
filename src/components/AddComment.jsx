@@ -24,6 +24,7 @@ class AddComment extends Component {
 
   handleSubmit = async (e) => {
     try {
+      e.preventDefault();
       const response = await fetch(
         `https://striveschool-api.herokuapp.com/api/comments/`,
         {

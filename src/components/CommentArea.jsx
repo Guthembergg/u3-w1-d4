@@ -45,7 +45,6 @@ class CommentArea extends Component {
   };
 
   componentDidMount = () => {
-    console.log("SONO COMPONENT DID MOUNT!");
     this.fetchComment();
   };
 
