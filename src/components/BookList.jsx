@@ -1,11 +1,11 @@
-import { Component } from 'react'
-import SingleBook from './SingleBook'
-import { Col, Form, Row } from 'react-bootstrap'
+import { Component } from "react";
+import SingleBook from "./SingleBook";
+import { Col, Form, Row } from "react-bootstrap";
 
 class BookList extends Component {
   state = {
-    searchQuery: '',
-  }
+    searchQuery: "",
+  };
 
   render() {
     return (
@@ -35,8 +35,8 @@ class BookList extends Component {
             ))}
         </Row>
       </>
-    )
+    );
   }
 }
 
-export default BookList
+export default BookList;
